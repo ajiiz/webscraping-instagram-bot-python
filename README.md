@@ -1,8 +1,11 @@
 # Information
 
 Bot uses WebDriver API(CHROME) from Selenium.
+
 It's only made for research purpuses and I don't recommend using it unless you don't want to get banned.
+
 It likes/unlikes posts from the chosen account's.
+
 You need Chrome Browser.
 
 # How it works
