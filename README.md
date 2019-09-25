@@ -11,5 +11,7 @@ You need Chrome Browser.
 # How it works
 
 1.Login to your instagram account.
+
 2.Type in username's that you want to like.
+
 3.Wait and watch how program makes everything for you.
