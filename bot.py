@@ -1,4 +1,5 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 import time
 
@@ -12,23 +13,26 @@ def amountOfAccounts():
 
 class InstaBot:
     def __init__(self, username, password):
-        self.bot = webdriver.Chrome()
+        self.bot = webdriver.Chrome(ChromeDriverManager().install())
         self.username = username
         self.password = password
-        self.bot.get("https://www.instagram.com/accounts/login/?source=auth_switcher")
+        self.bot.get("https://www.instagram.com")
     def login(self):
         bot = self.bot
         bot.implicitly_wait(5)
-
         usernameInput = bot.find_element_by_name("username")
         usernameInput.send_keys(self.username)
         passwordInput = bot.find_element_by_name("password")
         passwordInput.send_keys(self.password)
         passwordInput.submit()
-        notificationsSubmit = bot.find_element_by_class_name("HoLwm")
-        notificationsSubmit.click()
+        bot.implicitly_wait(5)
+        saveSubmit = bot.find_element_by_class_name("A086a")
+        saveSubmit.submit()
+        time.sleep(5)
+
     def likePosts(self,accounts):
         bot = self.bot
+        time.sleep(10)
         print(accounts)
         for i in range(len(accounts)):
             bot.get("https://www.instagram.com/"+accounts[i])
